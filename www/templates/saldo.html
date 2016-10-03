@@ -1,0 +1,45 @@
+<ion-view view-title="Consulta de Saldo">
+  <ion-content ng-controller="saldo" class="padding">
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="N° Tarjeta" ng-model="numeroTarjeta">
+      </label>
+      <button class="button button-positive button-small" ng-click="consultar()">Consultar</button>
+    </div>
+    <div >
+      <div class="card">
+        <div class="item item-divider">
+          Numero de Tarjeta
+        </div>
+        <div class="item item-text-wrap">
+          {{tarjeta.number}}
+        </div>
+      </div>
+      <div class="card">
+        <div class="item item-divider">
+          Saldo disponible
+        </div>
+        <div class="item item-text-wrap">
+          {{tarjeta.balance}}
+        </div>
+      </div>
+      <div class="card">
+        <div class="item item-divider">
+          Estado de la Tarjeta
+        </div>
+        <div class="item item-text-wrap">
+          {{tarjeta.message}}
+        </div>
+      </div>
+    </div>
+    <div class="card">
+        <div class="item item-divider">
+          Fecha
+        </div>
+        <div class="item item-text-wrap">
+          {{tarjeta.date | date : "mm/dd/yyyy"}}
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

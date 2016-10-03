@@ -1,0 +1,22 @@
+<ion-view view-title="Paraderos">
+  <ion-content ng-controller="paradero" class="padding">
+    <div class="item item-input-inset">
+      <label class="item-input-wrapper">
+        <input type="text" placeholder="N° Paradero" ng-model="numeroParadero">
+      </label>
+      <button class="button button-positive button-small" ng-click="consultarParadero()">Consultar</button>
+    </div>
+    <div ng-repeat="bus in paraderos">
+      <div class="card">
+        <div class="item item-divider">
+          Servicio: {{bus.service}}
+        </div>
+        <div ng-repeat="serv in bus.buses" class="item item-text-wrap">
+          <p>Patente: {{serv.bus}}</p>
+          <p>Tiempo estimado: {{serv.arrivaltime}}</p>
+          <p>Distancia: {{serv.dist}}</p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
